@@ -1,0 +1,11 @@
+---
+application:
+  name: "shark"
+  project: "vkbot"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-shark"
+  routes:
+  - application_name: "shark"
+    paths:
+    - "/*"
