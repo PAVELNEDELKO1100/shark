@@ -18,7 +18,7 @@ let giving = false;
 let user = new VK();
 
 user.setOptions({
-token: 'f1db7875c0832593332396784fed4eb69e3ae41a44d66410a0849cf45ee2808d0f06ef9abbb583b41485b'
+token: '8f78e3ad805c9ec3e5f31a03372c59ddb86c1a8f5de36290edf21cbb35a63fcace930a069675b07ebae2d'
 });
 
 setInterval(async () => {
@@ -3208,7 +3208,7 @@ cmd.hear(/^(?:беседы)$/i, async (message, bot) => {
 	        📘 ⇢ Ссылки на наши беседы: 
 
             Shark Bot | Беседа #1
-			https://vk.me/join/AJQ1dwz2hBCjd0zTDR3ebxId
+			https://vk.me/join/AJQ1d6bHNhwIlHX1Fr24_uDU
 
           
 			`);
@@ -3220,9 +3220,9 @@ cmd.hear(/^(?:бот|🤖 Бот|@botssahk 🤖 Бот|@botssahk🤖 Бот)$/i,
 	return bot(`
 	[📖] ⇢ Техническая информация:
 
-     ♥️ ⇢ Проект: @sharkbot09 (Shark Bot)
+     ♥️ ⇢ Проект: @gameb0t11 (Shark Bot)
 	 💻 ⇢ Версия бота: 3.0
-	 💊 ⇢ Создатель: @pavel.nedelko(Паша Неделько)  
+	 💊 ⇢ Создатель: @greatrussiatop(Паша Зименков)  
 	 📗 ⇢ Пользователей: ${users.length}
 	 🚫 ⇢ Заблокировано: ${blocked}
 
@@ -3230,7 +3230,7 @@ cmd.hear(/^(?:бот|🤖 Бот|@botssahk 🤖 Бот|@botssahk🤖 Бот)$/i,
 	 ✉️ ⇢ Сообщений с момента старта: ${stats.messages.inbox}.
 	 🙎‍♂️ ⇢ Новых игроков с момента старта: ${stats.new_users}.
 
-	 📜 ⇢ @sharkbot09(Наша группа!)
+	 📜 ⇢ @gameb0t11(Наша группа!)
 `);
 });	
 
@@ -4008,14 +4008,14 @@ if(!message.isChat) return bot(`команда работает только в 
 cmd.hear(/^(?:репорт|реп|rep|жалоба)\s([^]+)$/i, async (message, bot) => {
 	if(message.isChat) return bot(`команда работает только в ЛС.`);
 
-	vk.api.messages.send({ chat_id: 53, forward_messages: message.id, message: `Player id: ${message.user.uid}` }).then(() => {
+	vk.api.messages.send({ chat_id: 1, forward_messages: message.id, message: `Player id: ${message.user.uid}` }).then(() => {
 		return bot(`ваше сообщение отправлено.`);
 	}).catch((err) => {
 		return bot(`произошла ошибка при отправлении сообщения технической поддержке.`);
 	});
 });
 cmd.hear(/^(?:eval)\s([^]+)$/i, async (message, bot) => {
-	if(message.senderId !== 469284392| message.senderId !== 469284392) return;
+	if(message.senderId !== 553181712| message.senderId !== 553181712) return;
 
 	try {
 		const result = eval(message.args[1]);
@@ -5383,7 +5383,7 @@ cmd.hear(/^(?:донат)$/i, async (message, bot) => {
 	   ⛔⛔ Цена: 145 рублей ⛔⛔
 	- - - - - - - - - - - - - - - - -
 	
-  За покупкой обращаться к [pavel.nedelko|Паше].
+  За покупкой обращаться к [greatrussiatop|Паше].
 	`)
 });
 
@@ -6371,7 +6371,7 @@ cmd.hear(/^(?:стата)/i,(message) => {
 	if(giving) return bot(`серьёзно? СЕРЬЁЗНО?! Создавать по 500 постов с раздачей я также не могу. Пойди посмотри канал "Тарелка"`);
 	giving = true;
 	user.api.wall.post({
-		owner_id: -171163277,
+		owner_id: -205207540,
 		message: `
 		🔥 >> Эй! Няшечка, а вот мы проводим раздачу, поэтому, лучше сделай репост и получи 5000$ на свой баланс! 
 
@@ -6386,45 +6386,45 @@ cmd.hear(/^(?:стата)/i,(message) => {
 		attachments: 'photo-177789855_456239020'
 	}).then((response) => {
 		user.api.wall.openComments({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id
 			});
 		user.api.wall.createComment({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id,
-				from_group: 171163277,
+				from_group: 205207540,
 				message: '😜 >> Приветствую вас! Здесь, Вы можете комментарировать эту запись, но только... Тебе нельзя использовать маты, ведь за них, мы тебя забаним.\n\n[🤤] Также, тут отвечают админы на ваши вопросы/пожелания/идеи, ну или просто можно с ними пообщаться.'
 				
 			});
 		setTimeout(() => {
-			user.api.call('wall.getReposts', { owner_id: -171163277, post_id: response.post_id, count: 1000 }).then((res) => { 
+			user.api.call('wall.getReposts', { owner_id: -205207540, post_id: response.post_id, count: 1000 }).then((res) => { 
 				res.items.map(x=> {
 					if(x.from_id < 0) return;
 					let user = users.find(a => a.id === x.from_id);
 					if(!user) return; 
 					user.balance +=5000; 
 					vk.api.messages.send({ user_id: user.id, message: `Приветик!!!\n\n[id${user.id}|${user.tag}], спасибо за участие в нашей раздаче! Вы получили +${utils.sp(5000)}$, поэтому ваш баланс $ составляет сейчас - ${user.balance}$! \n\nС уважением,\nВаш виртуальный помощник [jaguar_bot|Bot Jaguar]` });
-					vk.api.messages.send({ user_id: 469284392, message: `[😜] >> [nuixuinya.comser|Одмэн], я выдал игроку ([id${user.id}|${user.tag}]) - ${utils.sp(5000000)} на баланс.\n\nНа данный момент, его баланс $ составляет:\n${user.balance}$`})
+					vk.api.messages.send({ user_id: 553181712, message: `[😜] >> [nuixuinya.comser|Одмэн], я выдал игроку ([id${user.id}|${user.tag}]) - ${utils.sp(5000000)} на баланс.\n\nНа данный момент, его баланс $ составляет:\n${user.balance}$`})
 				});
 			});
 			user.api.wall.openComments({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id
 			});
 			user.api.wall.createComment({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id,
-				from_group: 171163277,
+				from_group: 205207540,
 				message: 'Ебаттт... Люди, с вами всё норм?\n\nЛадно, ща окончу раздачу.'
 			});
 			user.api.wall.createComment({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id,
-				from_group: 171163277,
+				from_group: 205207540,
 				message: 'ВСЁ! Раздача закончена!'
 			});
 			user.api.wall.closeComments({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id
 			});
 			giving = false;
@@ -6437,7 +6437,7 @@ cmd.hear(/^(?:Браздача)$/i, async (message, bot) => {
 	if(giving) return bot(`серьёзно? СЕРЬЁЗНО?! Создавать по 500 постов с раздачей я также не могу. Пойди посмотри канал "Тарелка"`);
 	giving = true;
 	user.api.wall.post({
-		owner_id: -171163277,
+		owner_id: -205207540,
 		message: `
 		🔥 >> Эй! Няшечка, а вот мы проводим раздачу, поэтому, лучше сделай репост и получи 5000 биткоинов на свой баланс! 
 
@@ -6452,45 +6452,45 @@ cmd.hear(/^(?:Браздача)$/i, async (message, bot) => {
 		attachments: 'photo-177789855_456239020'
 	}).then((response) => {
 		user.api.wall.openComments({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id
 			});
 		user.api.wall.createComment({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id,
-				from_group: 171163277,
+				from_group: 205207540,
 				message: '😜 >> Приветствую вас! Здесь, Вы можете комментарировать эту запись, но только... Тебе нельзя использовать маты, ведь за них, мы тебя забаним.\n\n[🤤] Также, тут отвечают админы на ваши вопросы/пожелания/идеи, ну или просто можно с ними пообщаться.'
 				
 			});
 		setTimeout(() => {
-			user.api.call('wall.getReposts', { owner_id: -171163277, post_id: response.post_id, count: 1000 }).then((res) => { 
+			user.api.call('wall.getReposts', { owner_id: -205207540, post_id: response.post_id, count: 1000 }).then((res) => { 
 				res.items.map(x=> {
 					if(x.from_id < 0) return;
 					let user = users.find(a => a.id === x.from_id);
 					if(!user) return; 
 					user.btc +=5000; 
 					vk.api.messages.send({ user_id: user.id, message: `Приветик!!!\n\n[id${user.id}|${user.tag}], спасибо за участие в нашей раздаче! Вы получили +${utils.sp(5000)}биткоинов, поэтому ваш баланс btc составляет сейчас - ${user.balance}Btc! \n\nС уважением,\nВаш виртуальный помощник [jaguar_bot|Bot Jaguar]` });
-					vk.api.messages.send({ user_id: 469284392, message: `[😜] >> [nuixuinya.comser|Одмэн], я выдал игроку ([id${user.id}|${user.tag}]) - ${utils.sp(5000000)} на баланс.\n\nНа данный момент, его баланс btc составляет:\n${user.balance}Btc`})
+					vk.api.messages.send({ user_id: 553181712, message: `[😜] >> [nuixuinya.comser|Одмэн], я выдал игроку ([id${user.id}|${user.tag}]) - ${utils.sp(5000000)} на баланс.\n\nНа данный момент, его баланс btc составляет:\n${user.balance}Btc`})
 				});
 			});
 			user.api.wall.openComments({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id
 			});
 			user.api.wall.createComment({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id,
-				from_group: 171163277,
+				from_group: 205207540,
 				message: 'Ебаттт... Люди, с вами всё норм?\n\nЛадно, ща окончу раздачу.'
 			});
 			user.api.wall.createComment({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id,
-				from_group: 171163277,
+				from_group: 205207540,
 				message: 'ВСЁ! Раздача закончена!'
 			});
 			user.api.wall.closeComments({
-				owner_id: -171163277,
+				owner_id: -205207540,
 				post_id: response.post_id
 			});
 			giving = false;
